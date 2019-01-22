@@ -34,7 +34,7 @@ exports.findOneDocument = (req,res) => {
 
 exports.findOneDocumentAbogadoId = (req,res) => {
 
-  let conditions = { abogado_id: req.params.id};
+  let conditions = { id: req.params.id};
 
   Vista_abogado_clientes.where(conditions).fetchAll()
     .then(function(data){
