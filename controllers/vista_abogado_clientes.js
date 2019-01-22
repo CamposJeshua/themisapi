@@ -17,11 +17,28 @@ exports.findDocuments = (req,res) => {
 
 exports.findOneDocument = (req,res) => {
 
-  let conditions = { id: req.params.id };
+  let conditions = { cliente_id: req.params.id };
 
   Vista_abogado_clientes.forge(conditions).fetch()
     .then(function(data){
       if(!data) return res.status(404).json({ error : true, data : { message : 'vista_abogado_clientes no existe' } });
+
+      res.status(200).json({ error : false, data : data.toJSON() })
+
+    })
+    .catch(function(err){
+      res.status(500).json({ error : false, data : {message : err.message} })
+    })  
+
+}
+
+exports.findOneDocumentAbogadoId = (req,res) => {
+
+  let conditions = { abogado_id: req.params.id};
+
+  Vista_servicio_abogado.where(conditions).fetchAll()
+    .then(function(data){
+      if(!data) return res.status(404).json({ error : true, data : { message : 'vista_servicio_abogado no existe' } });
 
       res.status(200).json({ error : false, data : data.toJSON() })
 
