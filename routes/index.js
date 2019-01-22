@@ -13,6 +13,7 @@ const gestion_tipo_parametro = require('./gestion_tipo_parametro');
 
 //---- Vistas ------
 const vista_abogado = require('./vista_abogado');
+const vista_abogado_clientes = require('./vista_abogado_clientes');
 const vista_actuacion_catalogo = require('./vista_actuacion_catalogo');
 const vista_agendas = require('./vista_agendas');
 const vista_agenda = require('./vista_agenda');
@@ -311,6 +312,7 @@ app.use('/',
 	//---- Vistas ----
 	vista_comentario,
 	vista_abogado,
+	vista_abogado_clientes,
 	vista_actuacion_catalogo,
 	vista_recaudo_servicio,
 	vista_solicitud,
