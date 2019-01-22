@@ -1,8 +1,8 @@
-const heroku_url =  process.env.DATABASE_URL || 'postgres://arorrxllnqaega:945f31cd5883f6386e099c3891343e5993d425beae84acb2227fe4906fa3ed3a@ec2-54-235-68-3.compute-1.amazonaws.com:5432/dbi340b5kb69eu'
+const heroku_url =  process.env.DATABASE_URL || 'postgres://ytmnqlmf:d58EZjzsJJeRTLbdlQ6z1aCdnzS9KFwV@pellefant.db.elephantsql.com:5432/ytmnqlmf'
 module.exports = {
   basePath: '/',
   port: process.env.PORT || 3000,
-  SECRET_TOKEN: 'miclavedetokens',
+  //SECRET_TOKEN: 'miclavedetokens',
   db: {
     client: 'pg',
     connection: heroku_url  /*{
